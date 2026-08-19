@@ -1,0 +1,10 @@
+# 临时/本地文件
+*.tar.gz
+*.log
+*.py
+Thumbs.db
+.DS_Store
+
+# 原版文档(含真实 IP/密钥,禁止入库)
+平板MC服务器-*.md
+!平板MC服务器-*-公开版.md
