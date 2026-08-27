@@ -277,7 +277,7 @@ sudo bash -c ". <(curl -sSL https://doc.natfrp.com/launcher.sh)"
 ### 4.4 直接启动隧道(不用交互式界面,适合保活)
 
 ```bash
-sudo -u natfrp /home/natfrp/frpc -f 你的访问密钥:隧道ID1,隧道ID2 > /tmp/frp.log 2>&1 &
+sudo -u natfrp /home/natfrp/frpc -f <你的访问密钥>:<隧道ID1>,<隧道ID2> > /tmp/frp.log 2>&1 &
 sleep 3
 cat /tmp/frp.log
 ```
@@ -550,7 +550,7 @@ sudo tee /usr/local/bin/start-services.sh > /dev/null <<'EOF'
 mkdir -p /run/sshd
 pgrep -x sshd >/dev/null || /usr/sbin/sshd
 # frp 内网穿透
-pgrep -f "frpc -f" >/dev/null || sudo -u natfrp /home/natfrp/frpc -f 你的访问密钥:隧道ID >/tmp/frp.log 2>&1 &
+pgrep -f "frpc -f" >/dev/null || sudo -u natfrp /home/natfrp/frpc -f <你的访问密钥>:<隧道ID1>,<隧道ID2> >/tmp/frp.log 2>&1 &
 # MCSManager
 pgrep -f "mcsmanager/daemon/app.js" >/dev/null || (cd /opt/mcsmanager/daemon && nohup node app.js >/tmp/daemon.log 2>&1 &)
 pgrep -f "mcsmanager/web/app.js" >/dev/null || (cd /opt/mcsmanager/web && nohup node app.js >/tmp/web.log 2>&1 &)

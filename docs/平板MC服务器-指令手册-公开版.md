@@ -64,7 +64,7 @@ pgrep -f "mcsmanager/web/app.js"       # MCSManager web
 ### 3.1 开启隧道
 
 ```bash
-sudo -u natfrp /home/natfrp/frpc -f 你的访问密钥:<隧道ID1>,<隧道ID2> > /tmp/frp.log 2>&1 &
+sudo -u natfrp /home/natfrp/frpc -f <你的访问密钥>:<隧道ID1>,<隧道ID2> > /tmp/frp.log 2>&1 &
 ```
 
 - `你的访问密钥`:natfrp.com 用户中心复制
